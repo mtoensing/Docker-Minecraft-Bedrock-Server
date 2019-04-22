@@ -1,0 +1,18 @@
+{
+  "type": "crafting_shaped",
+  "group": "wood",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_birch_log"
+    }
+  },
+  "result": {
+    "item": "minecraft:wood",
+    "data": 10,
+    "count": 3
+  }
+}

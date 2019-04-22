@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:web"
+    }
+  ],
+  "result": {
+    "item": "minecraft:string",
+    "count": 9
+  }
+}

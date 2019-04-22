@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " # ",
+    "#F#",
+    " # "
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "#": {
+      "item": "minecraft:log2"
+    }
+  },
+  "result": {
+    "item": "minecraft:smoker"
+  }
+}

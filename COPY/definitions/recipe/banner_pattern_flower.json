@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shapeless",
+  "group": "banner_pattern",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:red_flower",
+      "data": 8
+    }
+  ],
+  "result": {
+    "item": "minecraft:banner_pattern",
+    "data": 2
+  }
+}

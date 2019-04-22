@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:emptymap",
+      "data": 1
+    },
+    {
+      "item": "minecraft:compass"
+    }
+  ],
+  "result":  {
+    "item": "minecraft:emptymap",
+    "data": 2
+  }
+}

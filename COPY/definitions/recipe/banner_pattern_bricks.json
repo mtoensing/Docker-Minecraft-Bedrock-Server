@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "group": "banner_pattern",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:brick_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:banner_pattern",
+    "data": 4
+  }
+}

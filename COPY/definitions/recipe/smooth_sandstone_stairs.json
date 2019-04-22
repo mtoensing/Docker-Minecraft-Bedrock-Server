@@ -1,0 +1,18 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sandstone",
+      "data": 3
+    }
+  },
+  "result": {
+    "item": "minecraft:smooth_sandstone_stairs",
+    "count": 4
+  }
+}

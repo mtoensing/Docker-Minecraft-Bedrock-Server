@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:end_bricks"
+    }
+  },
+  "result": {
+    "item": "minecraft:cobblestone_wall",
+    "data": 10,
+    "count": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "crafting_shapeless",
+  "group": "white_dye",
+  "ingredients": [
+    {
+      "item": "minecraft:dye",
+      "data": 15
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "data": 19
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_nether_brick"
+    }
+  },
+  "result": {
+    "item": "minecraft:cobblestone_wall",
+    "data": 13,
+    "count": 6
+  }
+}

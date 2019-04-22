@@ -1,0 +1,14 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:crafting_table"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": [
+    { "item": "minecraft:cartography_table" }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:illager_beast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": true
+    },
+    "components": {
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 2,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "illager"
+          }
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "player"
+                },
+                {
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "villager"
+                },
+                {
+                  "subject": "other",
+                  "test": "is_family",
+                  "value": "irongolem"
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ],
+        "must_see": true,
+        "priority": 3,
+        "within_radius": 16
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "reach_multiplier": 1.2
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 0.4
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 6,
+        "angle_of_view_horizontal": 45,
+        "probability": 1
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8,
+        "angle_of_view_horizontal": 45,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
+      },
+      "minecraft:attack": {
+        "damage": 12.0
+      },
+      "minecraft:breathable": {
+        "suffocateTime": 0,
+        "totalSupply": 15
+      },
+      "minecraft:collision_box": {
+        "height": 2.2,
+        "width": 1.95
+      },
+      "minecraft:health": {
+        "max": 100,
+        "value": 100
+      },
+      "minecraft:jump.static": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/illager_beast.json"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.5
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:nameable": {},
+      "minecraft:navigation.walk": {
+        "avoid_damage_blocks": true,
+        "avoid_water": true,
+        "can_path_over_water": true,
+        "can_sink": false
+      },
+      "minecraft:physics": {},
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "pillager"
+        ],
+        "seats": {
+          "position": [ 0.0, 2.1, -0.3 ]
+        }
+      },
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "illager"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "crafting_shaped",
+  "group": "sign",
+  "pattern": [
+    "###",
+	  "###",
+	  " | "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:planks",
+	    "data": 4
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "minecraft:acacia_sign",
+    "count": 3
+  }
+}
