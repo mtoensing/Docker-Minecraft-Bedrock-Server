@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "NN",
+    "NN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherbrick"
+    }
+  },
+  "result": {
+    "item": "minecraft:nether_brick"
+  }
+}

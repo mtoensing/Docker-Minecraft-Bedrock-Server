@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:stained_hardened_clay:10",
+  "output": "minecraft:purple_glazed_terracotta"
+}

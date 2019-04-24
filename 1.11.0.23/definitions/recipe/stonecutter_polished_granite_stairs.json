@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "stonecutter" ],
+  "priority": 5,
+  "ingredients": [
+    {
+      "item": "minecraft:stone",
+      "data": 1
+    }
+  ],
+  "result": {
+    "item": "minecraft:polished_granite_stairs",
+    "data": 0,
+    "count": 1
+  }
+}

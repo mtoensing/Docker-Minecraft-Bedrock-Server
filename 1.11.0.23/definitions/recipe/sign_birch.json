@@ -1,0 +1,23 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "group": "sign",
+  "pattern": [
+    "###",
+	  "###",
+	  " | "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:planks",
+	    "data": 2
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "minecraft:birch_sign",
+    "count": 3
+  }
+}

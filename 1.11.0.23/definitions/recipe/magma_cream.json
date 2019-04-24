@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "crafting_table" ],
+  "ingredients": [
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": {
+    "item": "minecraft:magma_cream"
+  }
+}

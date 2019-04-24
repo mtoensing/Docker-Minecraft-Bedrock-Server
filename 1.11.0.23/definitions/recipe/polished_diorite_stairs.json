@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone",
+      "data": 4
+    }
+  },
+  "result": {
+    "item": "minecraft:polished_diorite_stairs",
+    "count": 4
+  }
+}

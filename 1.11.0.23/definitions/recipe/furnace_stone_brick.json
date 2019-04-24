@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:stonebrick:0",
+  "output": "minecraft:stonebrick:2"
+}

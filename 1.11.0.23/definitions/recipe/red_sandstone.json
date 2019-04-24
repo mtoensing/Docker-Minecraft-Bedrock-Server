@@ -1,0 +1,18 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sand",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "minecraft:red_sandstone",
+    "data": 0
+  }
+}

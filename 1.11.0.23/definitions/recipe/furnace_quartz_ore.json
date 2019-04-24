@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace", "blast_furnace"],
+  "input": "minecraft:quartz_ore",
+  "output": "minecraft:quartz"
+}

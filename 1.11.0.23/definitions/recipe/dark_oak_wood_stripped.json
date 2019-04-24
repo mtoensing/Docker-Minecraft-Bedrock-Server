@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "group": "wood",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_dark_oak_log"
+    }
+  },
+  "result": {
+    "item": "minecraft:wood",
+    "data": 13,
+    "count": 3
+  }
+}

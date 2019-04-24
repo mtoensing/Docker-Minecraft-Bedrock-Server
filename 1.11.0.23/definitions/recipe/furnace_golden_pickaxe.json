@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace", "blast_furnace"],
+  "input": "minecraft:golden_pickaxe",
+  "output": "minecraft:gold_nugget"
+}

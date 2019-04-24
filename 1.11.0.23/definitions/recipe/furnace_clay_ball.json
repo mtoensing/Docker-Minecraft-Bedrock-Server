@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:clay_ball",
+  "output": "minecraft:brick"
+}

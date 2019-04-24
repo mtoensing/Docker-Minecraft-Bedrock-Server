@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:sponge:1",
+  "output": "minecraft:sponge:0"
+}

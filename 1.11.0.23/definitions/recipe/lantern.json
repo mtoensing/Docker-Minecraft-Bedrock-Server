@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "###",
+    "#x#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "x": {
+      "item": "minecraft:torch"
+    }
+  },
+  "result": {
+    "item": "minecraft:lantern",
+    "count": 1
+  }
+}

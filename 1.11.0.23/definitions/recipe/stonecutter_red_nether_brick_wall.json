@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "stonecutter" ],
+  "priority": 2,
+  "ingredients": [
+    {
+      "item": "minecraft:red_nether_brick",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "minecraft:cobblestone_wall",
+    "data": 13,
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:quartz_block",
+  "output": "minecraft:quartz_block:3"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "group": "sign",
+  "pattern": [
+    "###",
+	  "###",
+	  " | "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:planks",
+	  "data": 0
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "minecraft:sign",
+    "count": 3
+  }
+}
