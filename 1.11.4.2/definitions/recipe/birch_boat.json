@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "#P#",
+    "###"
+  ],
+  "key": {
+    "P": {
+        "item": "minecraft:wooden_shovel"
+    },
+    "#": {
+      "item": "minecraft:planks",
+      "data": 2
+    }
+  },
+  "result": {
+    "item": "minecraft:boat",
+    "data": 2
+  }
+}

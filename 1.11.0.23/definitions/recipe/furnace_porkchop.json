@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace", "smoker", "campfire"],
-  "input": "minecraft:porkchop",
-  "output": "minecraft:cooked_porkchop"
-}

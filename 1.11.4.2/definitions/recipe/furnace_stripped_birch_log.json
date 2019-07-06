@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:stripped_birch_log",
+  "output": "minecraft:coal:1"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "stonecutter" ],
+  "priority": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:prismarine",
+      "data": 2
+    }
+  ],
+  "result": {
+    "item": "minecraft:prismarine_bricks_stairs",
+    "data": 0,
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:sea_pickle",
+  "output": "minecraft:dye:10"
+}

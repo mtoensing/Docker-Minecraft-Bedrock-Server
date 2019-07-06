@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "M"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:melon"
+    }
+  },
+  "result": {
+    "item": "minecraft:melon_seeds"
+  }
+}

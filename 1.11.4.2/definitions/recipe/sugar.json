@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:reeds"
+    }
+  },
+  "result": {
+    "item": "minecraft:sugar"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stonebrick",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "minecraft:cobblestone_wall",
+    "data": 8,
+    "count": 6
+  }
+}

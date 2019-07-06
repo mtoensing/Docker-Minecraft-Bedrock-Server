@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace", "smoker", "campfire"],
+  "input": "minecraft:fish",
+  "output": "minecraft:cooked_fish"
+}

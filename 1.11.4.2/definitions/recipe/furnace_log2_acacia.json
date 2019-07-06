@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace"],
+  "input": "minecraft:log2:0",
+  "output": "minecraft:coal:1"
+}

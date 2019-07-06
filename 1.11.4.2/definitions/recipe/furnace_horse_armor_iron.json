@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": ["furnace", "blast_furnace"],
+  "input": "minecraft:horsearmoriron",
+  "output": "minecraft:iron_nugget"
+}

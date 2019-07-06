@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "||",
+    "##",
+    "##"
+  ],
+  "key": {
+    "|": {
+      "item": "minecraft:flint"
+    },
+    "#": {
+      "item": "minecraft:planks"
+    }
+  },
+  "result": [
+    { "item": "minecraft:fletching_table" }
+  ]
+}

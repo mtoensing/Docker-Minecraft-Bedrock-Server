@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "stonecutter" ],
+  "priority": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:quartz_block",
+      "data": 3
+    }
+  ],
+  "result": {
+    "item": "minecraft:smooth_quartz_stairs",
+    "data": 0,
+    "count": 1
+  }
+}

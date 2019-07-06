@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shaped",
+  "tags": [ "crafting_table" ],
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lapis_block"
+    }
+  },
+  "result": {
+    "item": "minecraft:dye",
+    "data": 4,
+    "count": 9
+  }
+}

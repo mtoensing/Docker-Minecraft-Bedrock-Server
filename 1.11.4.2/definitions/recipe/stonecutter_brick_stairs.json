@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "stonecutter" ],
+  "priority": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:brick_block",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "minecraft:brick_stairs",
+    "data": 0,
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "furnace_recipe",
+  "tags": [ "furnace" ],
+  "input": "minecraft:red_sandstone",
+  "output": "minecraft:red_sandstone:3"
+}

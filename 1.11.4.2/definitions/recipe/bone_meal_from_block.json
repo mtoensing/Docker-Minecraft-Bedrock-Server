@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "crafting_table" ],
+  "group": "bonemeal",
+  "ingredients": [
+    {
+      "item": "minecraft:bone_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "data": 15,
+    "count": 9
+  }
+}

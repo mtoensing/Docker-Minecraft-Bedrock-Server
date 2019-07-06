@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace", "smoker", "campfire"],
-  "input": "minecraft:salmon",
-  "output": "minecraft:cooked_salmon"
-}

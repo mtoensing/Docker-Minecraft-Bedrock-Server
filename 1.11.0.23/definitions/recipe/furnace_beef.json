@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace", "smoker", "campfire"],
-  "input": "minecraft:beef",
-  "output": "minecraft:cooked_beef"
-}

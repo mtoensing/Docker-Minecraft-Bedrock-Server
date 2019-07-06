@@ -1,0 +1,29 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "crafting_table" ],
+  "group": "magenta_dye",
+  "priority": 7,
+  "ingredients": [
+    {
+      "item": "minecraft:dye",
+      "data": 4
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 1
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 1
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 19
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "data": 13,
+    "count": 4
+  }
+}

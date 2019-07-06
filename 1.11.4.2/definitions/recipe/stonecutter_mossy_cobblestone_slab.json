@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "tags": [ "stonecutter" ],
+  "priority": 0,
+  "ingredients": [
+    {
+      "item": "minecraft:mossy_cobblestone",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "minecraft:double_stone_slab2",
+    "data": 5,
+    "count": 2
+  }
+}

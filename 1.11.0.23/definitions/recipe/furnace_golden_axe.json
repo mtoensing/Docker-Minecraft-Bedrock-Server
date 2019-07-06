@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace", "blast_furnace"],
-  "input": "minecraft:golden_axe",
-  "output": "minecraft:gold_nugget"
-}
