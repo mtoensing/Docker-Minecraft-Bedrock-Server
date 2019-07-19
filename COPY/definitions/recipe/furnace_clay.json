@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace"],
-  "input": "minecraft:clay",
-  "output": "minecraft:hardened_clay"
-}

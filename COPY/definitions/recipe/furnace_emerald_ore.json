@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace", "blast_furnace"],
-  "input": "minecraft:emerald_ore",
-  "output": "minecraft:emerald"
-}

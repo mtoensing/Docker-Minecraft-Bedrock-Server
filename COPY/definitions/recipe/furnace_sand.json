@@ -1,6 +1,0 @@
-{
-  "type": "furnace_recipe",
-  "tags": ["furnace"],
-  "input": "minecraft:sand",
-  "output": "minecraft:glass"
-}
