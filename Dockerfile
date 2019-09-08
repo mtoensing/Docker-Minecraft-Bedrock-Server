@@ -5,7 +5,8 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y --no-install-recommends unzip apt-utils libcurl4-openssl-dev
 
 # Expose minecraft bedrock port
-EXPOSE 19132
+EXPOSE 19132/tcp
+EXPOSE 19132/udp
 
 # Set workdir
 WORKDIR /bedrock-server
