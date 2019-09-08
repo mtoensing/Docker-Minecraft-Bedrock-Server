@@ -7,7 +7,9 @@ Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-s
 Local folder: /my_local_path/
 Mount path: /bedrock-server/worlds
 
-Optional:
+### Optional:
+[Example properties file](https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server/blob/master/server.properties)
+
 Local file: /my_local_path/server.properties
 Mount path: /bedrock-server/server.properties
 
