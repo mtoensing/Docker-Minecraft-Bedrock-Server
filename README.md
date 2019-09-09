@@ -25,3 +25,7 @@ Container Port: 19132 TCP
 Local Port: 19132 UDP
 
 Container Port: 19132 UDP
+
+## How to install the BEDROCK Server on a Synology NAS
+
+[![Watch the video](https://img.youtube.com/vi/jbyuWkF0RNQ/hqdefault.jpg)](https://youtu.be/jbyuWkF0RNQ)
