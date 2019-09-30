@@ -11,7 +11,8 @@ EXPOSE 19132/udp
 # Set workdir
 WORKDIR /bedrock-server
 
-# Download latest bedrock server 
+# Download latest bedrock server
+# WARNING: Don't copy that! This will not work forever!
 ADD https://mc.marc.tv/latestbedrock.php bedrock-server.zip
 
 # Unzip to workdir
