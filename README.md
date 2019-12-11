@@ -1,4 +1,4 @@
-# Minecraft-Bedrock-Server-docker
+# Minecraft-Bedrock-Server-docker 1.14.0.9
 
 Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/
 
