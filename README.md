@@ -20,6 +20,8 @@ Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-s
 
 Open these ports of the local ip of your NAS to the internet in your router. Consult the manual of your router for this.
 
+![Correct local and container ports](https://marc.tv/media/2020/01/bedrock-port.jpg "Correct local and container ports")
+
 ### Optional: edit server.properties and whitelist.json
 
 To edit the server.properties and whitelist.json you have to add them locally on your NAS
