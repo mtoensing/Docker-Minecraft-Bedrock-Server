@@ -20,23 +20,25 @@ Download these files and place them in the parent folder of your bedrock docker 
 * [Example server.properties file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/server.properties)
 * [Example empty whitelist.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/whitelist.json)
 
-*Local folder:* /volume1/docker/bedrockserver/worlds
-*Mount path:* /bedrock-server/worlds
+**Local folder:** /volume1/docker/bedrockserver/worlds
+**Mount path:** /bedrock-server/worlds
 
-*Local file server.properties:* /volume1/docker/bedrockserver/server.properties
-*Mount path:* /bedrock-server/server.properties
+**Local file server.properties:** /volume1/docker/bedrockserver/server.properties
+**Mount path:** /bedrock-server/server.properties
 
-*Local file whitelist.json:* /volume1/docker/bedrockserver/whitelist.json
-*Mount path:* /bedrock-server/whitelist.json
+**Local file whitelist.json:** /volume1/docker/bedrockserver/whitelist.json
+**Mount path:** /bedrock-server/whitelist.json
 
 ## Add someone to the whitelist and grant user admin rights
 
 You can enter commands in terminal on Synology on your Docker Container. Add users to the whitelist and do not edit the whitelist.json manually:
 
-*whitelist add [xbox playername]*
+**whitelist add [xbox playername]**
+
 e.g. `whitelist add MarcTV`
 
-*op [xbox playername]*
+**op [xbox playername]**
+
 e.g. `op MarcTV`
 
 This only works if the user is online.
