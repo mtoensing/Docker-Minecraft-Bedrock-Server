@@ -4,9 +4,9 @@ Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-s
 
 ## Volumes
 
-Local folder: /volume1/docker/bedrockserver/worlds
-
-Mount path: /bedrock-server/worlds
+**Worlds**
+* **Local folder:** /volume1/docker/bedrockserver/worlds
+* **Mount path:** /bedrock-server/worlds
 
 ### Optional: edit server.properties and whitelist.json
 
