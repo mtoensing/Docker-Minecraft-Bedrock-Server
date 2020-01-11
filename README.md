@@ -17,8 +17,8 @@ and mount these files in the container.
 
 Download these files and place them in the parent folder of your bedrock docker folder. e.g.
 
-* [Example properties file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/server.properties)
-* [Example whitelist file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/whitelist.json)
+* [Example server.properties file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/server.properties)
+* [Example empty whitelist.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/whitelist.json)
 
 Local folder: /volume1/docker/bedrockserver/worlds
 Mount path: /bedrock-server/worlds
