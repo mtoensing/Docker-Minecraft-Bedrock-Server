@@ -8,6 +8,16 @@ Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-s
 * **Local folder:** /volume1/docker/bedrockserver/worlds
 * **Mount path:** /bedrock-server/worlds
 
+## Port Settings
+
+* **Local Port:** 19132 TCP
+* **Container Port:** 19132 TCP
+
+* **Local Port:** 19132 UDP
+* **Container Port:** 19132 UDP
+
+Open these ports of the local ip of your NAS to the internet in your router. Consult the manual of your router for this.
+
 ### Optional: edit server.properties and whitelist.json
 
 To edit the server.properties and whitelist.json you have to add them locally on your NAS
@@ -32,6 +42,8 @@ Download these files and place them in the parent folder of your bedrock docker 
 * **Local file whitelist.json:** /volume1/docker/bedrockserver/whitelist.json
 * **Mount path:** /bedrock-server/whitelist.json
 
+You can edit the server.properties on you NAS directly after you shut down the server. You can edit specific options like gamemode (creative or survival) or enable the whitelist. The later is highly recommended if you plan to open the ports to the internet.
+
 ## Add someone to the whitelist and grant user admin rights
 
 You can enter commands in terminal on Synology on your Docker Container. Add users to the whitelist and do not edit the whitelist.json manually:
@@ -47,17 +59,6 @@ e.g. `op MarcTV`
 This only works if the user is online.
 
 ![Terminal in Bedrock](https://marc.tv/media/2020/01/bedrock-terminal.jpg "Terminal in Bedrock")
-
-## Port Settings
-
-Local Port: 19132 TCP
-
-Container Port: 19132 TCP
-
-
-Local Port: 19132 UDP
-
-Container Port: 19132 UDP
 
 ## How to install the BEDROCK Server on a Synology NAS
 
