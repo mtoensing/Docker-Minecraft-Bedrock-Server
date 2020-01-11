@@ -10,9 +10,11 @@ Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-s
 
 ## Port Settings
 
+**TCP**
 * **Local Port:** 19132 TCP
 * **Container Port:** 19132 TCP
 
+**UDP**
 * **Local Port:** 19132 UDP
 * **Container Port:** 19132 UDP
 
