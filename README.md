@@ -2,18 +2,46 @@
 
 Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/
 
-## Volumes 
+## Volumes
 
-Local folder: /my_local_path/
+Local folder: /volume1/docker/bedrockserver/worlds
 
 Mount path: /bedrock-server/worlds
 
-### Optional:
+### Optional: edit server.properties and whitelist.json
+
+To edit the server.properties and whitelist.json you have to add them locally on your NAS
+and mount these files in the container.
+
+![Correct local and container paths](https://marc.tv/media/2019/04/bedrock-server-properties.jpg "Correct local and container paths")
+
+Download these files and place them in the parent folder of your bedrock docker folder. e.g.
+
 [Example properties file](https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server/blob/master/server.properties)
+[Example whitelist file](https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server/blob/master/whitelist.json)
 
-Local file: /my_local_path/server.properties
+Local folder: /volume1/docker/bedrockserver/worlds
+Mount path: /bedrock-server/worlds
 
+Local file server.properties: /volume1/docker/bedrockserver/server.properties
 Mount path: /bedrock-server/server.properties
+
+Local file whitelist.json: /volume1/docker/bedrockserver/whitelist.json
+Mount path: /bedrock-server/whitelist.json
+
+## Add someone to the whitelist and grant user admin rights
+
+You can enter commands in terminal on Synology on your Docker Container. Add users to the whitelist and do not edit the whitelist.json manually:
+
+*whitelist add [xbox playername]*
+e.g. `whitelist add MarcTV`
+
+*op [xbox playername]*
+e.g. `op MarcTV`
+
+This only works if the user is online.
+
+![Terminal in Bedrock](https://marc.tv/media/2020/01/bedrock-terminal.jpg "Terminal in Bedrock")
 
 ## Port Settings
 
