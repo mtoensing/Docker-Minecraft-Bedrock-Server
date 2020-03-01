@@ -1,5 +1,5 @@
 # Use Ubuntu as base image
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y --no-install-recommends unzip apt-utils libcurl4-openssl-dev ca-certificates curl
