@@ -3,6 +3,11 @@
 * YouTube Video Tutorial (english) https://youtu.be/jbyuWkF0RNQ
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
 
+## Video: How to install the BEDROCK Server on a Synology NAS
+
+[![Watch the video](https://img.youtube.com/vi/jbyuWkF0RNQ/maxresdefault.jpg)](https://youtu.be/jbyuWkF0RNQ)
+https://youtu.be/jbyuWkF0RNQ
+
 ## Volumes
 
 **Worlds**
@@ -65,6 +70,3 @@ This only works if the user is online.
 
 ![Terminal in Bedrock](https://marc.tv/media/2020/01/bedrock-terminal.jpg "Terminal in Bedrock")
 
-## How to install the BEDROCK Server on a Synology NAS
-
-[![Watch the video](https://img.youtube.com/vi/jbyuWkF0RNQ/maxresdefault.jpg)](https://youtu.be/jbyuWkF0RNQ)
