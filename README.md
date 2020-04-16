@@ -2,8 +2,7 @@
 
 * YouTube Video Tutorial (english) https://youtu.be/jbyuWkF0RNQ
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
-* Get Image on DockerHub https://hub.docker.com/r/marctv/minecraft-bedrock-server
-* V1.14.32.1
+* Always up-to-da
 
 ## Video: How to install the BEDROCK Server on a Synology NAS
 
