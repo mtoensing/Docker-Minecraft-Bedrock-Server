@@ -16,7 +16,7 @@ WORKDIR /bedrock-server
 
 # Download latest bedrock server
 # WARNING: Don't copy that! This will not work forever!
-RUN wget --content-disposition https://mc.marc.tv/latestbedrock/?pass=123
+RUN wget -q --content-disposition https://mc.marc.tv/latestbedrock/?pass=123
 
 # Unzip to workdir
 RUN unzip *.zip
