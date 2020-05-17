@@ -2,7 +2,7 @@
 FROM ubuntu:18.04
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends wget unzip apt-utils libcurl4-openssl-dev ca-certificates curl
+RUN apt-get update && apt-get install -y --no-install-recommends unzip apt-utils libcurl4-openssl-dev ca-certificates curl
 
 # Expose minecraft bedrock port IPv4
 EXPOSE 19132/tcp
@@ -16,10 +16,10 @@ WORKDIR /bedrock-server
 
 # Download latest bedrock server
 # WARNING: Don't copy that! This will not work forever!
-RUN wget --content-disposition https://mc.marc.tv/latestbedrock/?pass=123
+ADD http://mc.marc.tv/latestbedrock/ bedrock-server.zip
 
 # Unzip to workdir
-RUN unzip *.zip
+RUN unzip bedrock-server.zip
 
 # Set env path
 ENV LD_LIBRARY_PATH=.
