@@ -16,7 +16,7 @@ WORKDIR /bedrock-server
 
 # Download latest bedrock server
 # WARNING: Don't copy that! This will not work forever!
-ADD http://mc.marc.tv/latestbedrock/ bedrock-server.zip
+ADD http://mc.marc.tv/latestbedrock/?pass=123 bedrock-server.zip
 
 # Unzip to workdir
 RUN unzip bedrock-server.zip
