@@ -24,5 +24,8 @@ RUN unzip *.zip
 # Set env path
 ENV LD_LIBRARY_PATH=.
 
+# set permission
+RUN chmod +x bedrock_server
+
 # Start server
 CMD ./bedrock_server
