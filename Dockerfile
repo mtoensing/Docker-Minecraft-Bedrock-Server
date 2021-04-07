@@ -10,9 +10,6 @@ EXPOSE 19132/udp
 # Expose minecraft bedrock port IPv6
 EXPOSE 19133/tcp
 EXPOSE 19133/udp
-# Expose second minecraft bedrock port IPv4
-EXPOSE 34236/tcp
-EXPOSE 34236/udp
 
 # Set workdir
 WORKDIR /bedrock-server
