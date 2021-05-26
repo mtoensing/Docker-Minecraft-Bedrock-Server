@@ -4,6 +4,13 @@
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
 * Always up-to-date
 
+# How do I update the container? 
+
+* Re-download the image from the docker
+* Stop the container
+* Clear the container
+* Start the container
+
 ## Video: How to install the BEDROCK Server on a Synology NAS
 
 [![Watch the video](https://img.youtube.com/vi/jbyuWkF0RNQ/maxresdefault.jpg)](https://youtu.be/jbyuWkF0RNQ)
