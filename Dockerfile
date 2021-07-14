@@ -16,7 +16,7 @@ WORKDIR /bedrock-server
 
 # Download latest bedrock server
 # WARNING: Don't copy that! This will not work forever!
-RUN wget -q --content-disposition 'https://minecraft.azureedge.net/bin-linux/bedrock-server-1.17.10.04.zip'
+RUN wget -q --content-disposition 'https://mc.marc.tv/latestbedrock/?pass=rosa'
 
 # Unzip to workdir
 RUN unzip *.zip
