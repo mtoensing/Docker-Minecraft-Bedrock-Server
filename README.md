@@ -1,7 +1,9 @@
 # Minecraft Bedrock Server Docker Image 1.18
 
-* YouTube Video Tutorial (english) https://youtu.be/jbyuWkF0RNQ
+* YouTube Video Tutorial https://youtu.be/jbyuWkF0RNQ
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
+* GitHub https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server 
+* Support https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server/issues
 * Always up-to-date
 
 # How do I update the container? 
