@@ -14,9 +14,8 @@ EXPOSE 19133/udp
 # Set workdir
 WORKDIR /bedrock-server
 
-# Download latest bedrock server
-# WARNING: Don't copy that! This will not work forever!
-RUN wget -q --content-disposition 'https://mc.marc.tv/latestbedrock/?pass=RYN8H75vJL'
+# Download bedrock server zip
+RUN wget -q --content-disposition 'https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.1.01.zip'
 
 # Unzip to workdir
 RUN unzip *.zip
