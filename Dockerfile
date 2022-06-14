@@ -15,7 +15,7 @@ EXPOSE 19133/udp
 WORKDIR /bedrock-server
 
 # Download bedrock server zip
-ADD https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.1.01.zip
+ADD https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.1.01.zip .
 
 # Unzip to workdir
 RUN unzip *.zip
