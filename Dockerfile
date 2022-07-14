@@ -25,8 +25,6 @@ COPY ./getbedrockserver.sh /
 COPY ./latestbedrock.php /
 RUN chmod +x /getbedrockserver.sh
 RUN chmod +x /latestbedrock.php
-RUN ls -la /
-RUN php /latestbedrock.php
 RUN /getbedrockserver.sh 
 
 # Unzip to workdir
