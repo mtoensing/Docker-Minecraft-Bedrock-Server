@@ -1,5 +1,5 @@
 # source of this script is latestbedrock.php in this repo. 
-content=$(php latestbedrock.php)
+content=$(php /bedrock-server/latestbedrock.php)
 echo -----------------
 echo $content
 echo -----------------
