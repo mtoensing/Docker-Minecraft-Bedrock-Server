@@ -1,5 +1,5 @@
 # source of this script is latestbedrock.php in this repo. 
-content=$(php /latestbedrock.php)
+content=$(wget https://mc.marc.tv/latestbedrock/?pass=Hdha1ujNsvTwFl -q -O -)
 echo -----------------
 echo $content
 echo -----------------
