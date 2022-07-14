@@ -8,7 +8,7 @@ RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONT
 RUN apt-get update && apt-get install -y tzdata
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends wget unzip php php-curl apt-utils libcurl4-openssl-dev ca-certificates curl
+RUN apt-get update && apt-get install -y --no-install-recommends wget unzip php php-curl php-dom apt-utils libcurl4-openssl-dev ca-certificates curl
 
 # Expose minecraft bedrock port IPv4
 EXPOSE 19132/tcp
