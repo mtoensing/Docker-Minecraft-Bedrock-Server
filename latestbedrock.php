@@ -1,5 +1,5 @@
 <?php
-/* Helper script for marctv bedrock docker */  
+/* Helper script for marctv bedrock docker remotely */  
 
 if($_GET["pass"] != "mypassword") die();
 
