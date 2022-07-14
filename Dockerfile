@@ -18,10 +18,12 @@ EXPOSE 19133/udp
 WORKDIR /bedrock-server
 
 # Download bedrock server zip
-ADD https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.10.03.zip .
+COPY ./getbedrockserver.sh /
+RUN chmod +x /getbedrockserver.sh
+RUN /getbedrockserver.sh 
 
 # Unzip to workdir
-RUN unzip *.zip
+RUN unzip bedrock-server-ubuntu.zip
 
 # Set env path
 ENV LD_LIBRARY_PATH=.
