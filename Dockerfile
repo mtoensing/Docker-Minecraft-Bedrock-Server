@@ -1,6 +1,10 @@
 # Use Ubuntu as base image
 FROM ubuntu:18.04
 
+# Download and install xidel 
+ADD https://github.com/benibela/xidel/releases/download/Xidel_0.9.8/xidel_0.9.8-1_amd64.deb /
+RUN dpkg -i /xidel_0.9.8-1_amd64.deb
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y --no-install-recommends wget unzip apt-utils libcurl4-openssl-dev ca-certificates curl 
 
@@ -16,10 +20,6 @@ EXPOSE 19133/udp
 
 # Set workdir
 WORKDIR /bedrock-server
-
-# Download and install xidel 
-ADD https://github.com/benibela/xidel/releases/download/Xidel_0.9.8/xidel_0.9.8-1_amd64.deb /
-RUN dpkg -i xidel_0.9.8-1_amd64.deb
 
 # Download bedrock server zip
 COPY ./getbedrockserver.sh /
