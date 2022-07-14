@@ -1,11 +1,11 @@
 # Use Ubuntu as base image
 FROM ubuntu:18.04
 
-# Install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends wget unzip php apt-utils libcurl4-openssl-dev ca-certificates curl
-
 # Install time zone package
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y --no-install-recommends wget unzip php apt-utils libcurl4-openssl-dev ca-certificates curl
 
 # Expose minecraft bedrock port IPv4
 EXPOSE 19132/tcp
