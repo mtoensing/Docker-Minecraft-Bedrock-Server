@@ -1,7 +1,4 @@
 <?php
-/* Helper script for marctv bedrock docker */  
-
-if($_GET["pass"] != "mypassword") die();
 
 /* Use internal libxml errors -- turn on in production, off for debugging */
 libxml_use_internal_errors(true);
