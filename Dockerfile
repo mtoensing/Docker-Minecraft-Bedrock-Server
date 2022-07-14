@@ -1,6 +1,8 @@
 # Use Ubuntu as base image
 FROM ubuntu:18.04
 
+LABEL Marc Tönsing <marc@marc.tv>
+
 # Download and install xidel. 
 # Parse html with xpath to download server. Used in getbedrockserver.sh
 ADD https://github.com/benibela/xidel/releases/download/Xidel_0.9.8/xidel_0.9.8-1_amd64.deb /
