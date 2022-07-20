@@ -21,4 +21,4 @@ jobs:
       with: 
         context: .
         push: true
-        tags: marctv/minecraft-bedrock-server:beta
+        tags: marctv/minecraft-bedrock-server:latest
