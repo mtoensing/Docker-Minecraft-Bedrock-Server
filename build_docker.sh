@@ -1,1 +1,1 @@
-docker build -t marctv/minecraftbedrockserver .
+docker build --platform amd64  -t marctv/minecraftbedrockserver .
