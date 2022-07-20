@@ -9,7 +9,7 @@ ADD https://github.com/benibela/xidel/releases/download/Xidel_0.9.8/xidel_0.9.8-
 RUN dpkg -i /xidel_0.9.8-1_amd64.deb
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends wget unzip apt-utils l4-openssl-dev ca-certificates curl 
+RUN apt-get update && apt-get install -y --no-install-recommends wget unzip apt-utils libssl1.0-dev ca-certificates curl 
 
 # Install time zone package
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
