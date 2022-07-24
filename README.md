@@ -4,7 +4,7 @@
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
 * GitHub https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server 
 * Support https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server/issues
-* Always up-to-date
+* Always up-to-date.
 
 # How do I update the container? 
 
