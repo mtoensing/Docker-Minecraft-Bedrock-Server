@@ -24,7 +24,7 @@ jobs:
         pass: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         slug: marctv/minecraft-bedrock-server
         readme: ./README.md
-        description: Starts a Minecraft Bedrock Server 1.19 for iOS, Android, Windows, PS4 and XBOX.
+        description: Minecraft Bedrock Server 1.19 for Windows, iOS, Android, PlayStation and Xbox — Starts fast, runs stable and is always up-to-date. 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with: 
