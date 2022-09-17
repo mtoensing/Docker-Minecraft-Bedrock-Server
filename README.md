@@ -1,4 +1,4 @@
-# Minecraft Bedrock Server Docker Image 1.19
+# Minecraft Bedrock Server Docker Image 1.19+
 
 * YouTube Video Tutorial https://youtu.be/jbyuWkF0RNQ
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
