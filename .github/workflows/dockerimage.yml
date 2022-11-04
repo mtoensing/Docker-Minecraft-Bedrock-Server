@@ -26,7 +26,7 @@ jobs:
         readme: ./README.md
         description: Minecraft Bedrock Server 1.19 for Windows, iOS, Android, PlayStation and Xbox — Starts fast, runs stable and is always up-to-date. 
     - name: Login to Docker Hub
-      uses: docker/login-action@v1
+      uses: docker/login-action@v2
       with: 
         username:  ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
