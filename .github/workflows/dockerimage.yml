@@ -2,9 +2,11 @@ name: Build and push master
 
 on: 
   push:
+    branches:
+      - main
   schedule:
-  - cron: "0 */12 * * *"
-  
+    - cron: "0 */12 * * *"
+      
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
