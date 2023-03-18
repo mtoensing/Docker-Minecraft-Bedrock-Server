@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-    -   name: Update Readme.md and description
+      - name: Update Readme.md and description
         uses: meeDamian/sync-readme@v1.0.6
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
