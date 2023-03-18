@@ -31,6 +31,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          user: ${{ secrets.DOCKER_HUB_USERNAME }}
+          pass: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           readme: ./README.md
       - name: Log in to the Container registry
         uses: docker/login-action@v2
