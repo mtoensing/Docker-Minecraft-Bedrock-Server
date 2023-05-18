@@ -1,5 +1,5 @@
 # Use Ubuntu as base image 
-FROM ubuntu:18.04
+FROM ubuntu:23.10
 
 LABEL Marc Tönsing <marc@marc.tv>
 
