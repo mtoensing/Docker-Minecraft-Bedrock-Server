@@ -1,4 +1,4 @@
-# Minecraft Bedrock Server Docker Image 1.19+
+# Minecraft Bedrock Server Docker Image 1.20+
 
 * Always up-to-date.
 * YouTube Video Tutorial https://youtu.be/jbyuWkF0RNQ
