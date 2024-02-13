@@ -13,6 +13,24 @@
 * Clear the container
 * Start the container
 
+## Docker Run Command
+
+**Notice**: the files ```allowlist.json``` and ```server.properties``` have to exist for this command to work.
+
+```shell
+docker run -d \
+  --name mcbedrock \
+  --restart=unless-stopped \
+  -e TZ="Europe/Berlin" \
+  -p 19132:19132/tcp \
+  -p 19132:19132/udp \
+  -v /home/docker/mcserver-bedock/allowlist.json:/bedrock-server/allowlist.json:rw \
+  -v /home/docker/mcserver-bedock/server.properties:/bedrock-server/server.properties:rw \
+  -v /home/docker/mcserver-bedock:/bedrock-server/worlds:rw \
+  marctv/minecraft-bedrock-server:latest 
+
+```
+
 ## Video: How to install the BEDROCK Server on a Synology NAS
 
 [![Watch the video](https://img.youtube.com/vi/jbyuWkF0RNQ/maxresdefault.jpg)](https://youtu.be/jbyuWkF0RNQ)
