@@ -32,6 +32,9 @@ RUN /getbedrockserver.sh
 # Unzip to workdir
 RUN unzip bedrock-server-ubuntu.zip
 
+# Delete redundant extracted zip
+RUN rm bedrock-server-ubuntu.zip
+
 # Set env path
 ENV LD_LIBRARY_PATH=.
 
