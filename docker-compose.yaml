@@ -1,0 +1,26 @@
+services:
+  mcbedrock:
+    container_name: mcbedrock
+    image: docker.io/marctv/minecraft-bedrock-server:latest
+    restart: unless-stopped
+    network_mode: bridge
+    tty: true
+    stdin_open: true
+    user: 1000:1000 # make sure the mounted paths are writable for this user/group
+    environment:
+      TZ: Europe/Berlin
+    deploy:
+      resources:
+        limits:
+          memory: "4096MB"
+          cpus: "2"
+    ports:
+      - "19132:19132/tcp"
+      - "19132:19132/udp"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /apps/mcbedrock/data/worlds/:/bedrock-server/worlds/
+      - /apps/mcbedrock/data/server.properties:/bedrock-server/server.properties
+      - /apps/mcbedrock/data/allowlist.json:/bedrock-server/allowlist.json
+      - /apps/mcbedrock/data/whitelist.json:/bedrock-server/whitelist.json
+      - /apps/mcbedrock/data/permissions.json:/bedrock-server/permissions.json
