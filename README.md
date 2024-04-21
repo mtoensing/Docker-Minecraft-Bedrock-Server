@@ -40,7 +40,7 @@ Open these ports of the local ip of your NAS to the internet in your router. Con
 
 ### Optional: edit server.properties and allowlist.json
 
-To edit the server.properties and allowlist.json you have to add them locally on your NAS
+To edit the `server.properties`, `allowlist.json`, `whitelist.json` or `permissions.json` you have to add them locally on your NAS
 and mount these files in the container.
 
 ![Correct local and container paths](https://marc.tv/media/2019/04/bedrock-server-properties.jpg "Correct local and container paths")
@@ -49,6 +49,8 @@ Download these files and place them in the parent folder of your bedrock docker 
 
 * [Example server.properties file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/server.properties)
 * [Example empty allowlist.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/allowlist.json)
+* [Example empty whitelist.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/whitelist.json)
+* [Example empty permissions.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/permissions.json)
 
 **Worlds**
 * **Local folder:** /volume1/docker/bedrockserver/worlds
@@ -62,11 +64,21 @@ Download these files and place them in the parent folder of your bedrock docker 
 * **Local file allowlist.json:** /volume1/docker/bedrockserver/allowlist.json
 * **Mount path:** /bedrock-server/allowlist.json
 
-You can edit the server.properties on you NAS directly after you shut down the server. You can edit specific options like gamemode (creative or survival) or enable the allowlist. The later is highly recommended if you plan to open the ports to the internet.
+**whitelist.json**
+* **Local file permissions.json:** /volume1/docker/bedrockserver/whitelist.json
+* **Mount path:** /bedrock-server/whitelist.json
+
+**permissions.json**
+* **Local file permissions.json:** /volume1/docker/bedrockserver/permissions.json
+* **Mount path:** /bedrock-server/permissions.json
+
+You can edit the `server.properties` on you NAS directly after you shut down the server. 
+You can edit specific options like gamemode (creative or survival) or enable the allowlist. 
+The later is highly recommended if you plan to open the ports to the internet.
 
 ## Add someone to the allowlist and grant user admin rights
 
-You can enter commands in terminal on Synology on your Docker Container. Add users to the allowlist and do not edit the allowlist.json manually:
+You can enter commands in terminal on Synology on your Docker Container. Add users to the allowlist and do not edit the `allowlist.json` manually:
 
 **allowlist add [xbox playername]**
 
