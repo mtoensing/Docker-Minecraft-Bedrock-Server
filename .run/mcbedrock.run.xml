@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="mcbedrock" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="marctv/mcbedrock:dev" />
+        <option name="buildArgs">
+          <list>
+            <DockerEnvVarImpl>
+              <option name="name" value="DOWNLOAD_URL" />
+              <option name="value" value="https://minecraft.azureedge.net/bin-linux/bedrock-server-1.20.73.01.zip" />
+            </DockerEnvVarImpl>
+          </list>
+        </option>
+        <option name="buildCliOptions" value="--platform linux/amd64" />
+        <option name="containerName" value="mcbedrock" />
+        <option name="commandLineOptions" value="--platform linux/amd64" />
+        <option name="showCommandPreview" value="true" />
+        <option name="sourceFilePath" value="Dockerfile" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

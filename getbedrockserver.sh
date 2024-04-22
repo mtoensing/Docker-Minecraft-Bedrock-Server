@@ -1,9 +1,12 @@
-# Set parameter default 
-VAR=${1:-Download}   
-# Get url to latest server binary by parsing the download webpage with an xpath using xidel
-URL=$(xidel https://www.minecraft.net/en-us/download/server/bedrock -e "(//a[contains(@aria-label,'Download') and contains(@aria-label,'$1') and contains(@aria-label,'Server') and contains(@aria-label,'Linux')]/@href)[1]")
-echo -----------------
-echo $URL
-echo -----------------
-# Download the server binary url
-curl -H "Accept-Encoding: identity" -H "Accept-Language: en" -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4.212 Safari/537.36" -o bedrock-server-ubuntu.zip $URL
+#!/usr/bin/env bash
+
+MC_DOWNLOAD_PAGE="https://www.minecraft.net/en-us/download/server/bedrock"
+CURL_USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+
+#MC_DOWNLOAD_PAGE_CONTENT=$(curl -s -L -A "${CURL_USER_AGENT}" "${MC_DOWNLOAD_PAGE}")
+MC_DOWNLOAD_PAGE_CONTENT=$(cat download.html)
+
+echo "${MC_DOWNLOAD_PAGE_CONTENT}" | grep "linux/bedrock-server-" | egrep -o 'https?://[^" ]+'
+
+echo "${MC_DOWNLOAD_PAGE_CONTENT}" | grep "linux/bedrock-server-" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p'
+

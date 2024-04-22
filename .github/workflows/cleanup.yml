@@ -1,0 +1,17 @@
+name: 'cleanup'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  remove_package_versions:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: purge untagged container images
+        uses: dylanratcliffe/delete-untagged-containers@main
+        with:
+          package_name: 'docker-minecraft-bedrock-server'
+          token: ${{ secrets.GITHUB_TOKEN }}
