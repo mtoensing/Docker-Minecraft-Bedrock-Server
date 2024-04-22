@@ -1,5 +1,13 @@
 # Minecraft Bedrock Server Docker Image 1.20+
 
+![](https://img.shields.io/github/license/mtoensing/Docker-Minecraft-Bedrock-Server.svg)
+![](https://img.shields.io/github/stars/mtoensing/Docker-Minecraft-Bedrock-Server)
+![](https://img.shields.io/docker/v/marctv/minecraft-bedrock-server)
+![](https://img.shields.io/docker/stars/marctv/minecraft-bedrock-server.svg)
+![](https://img.shields.io/docker/pulls/marctv/minecraft-bedrock-server.svg)
+![](https://img.shields.io/docker/image-size/marctv/minecraft-bedrock-server.svg)
+
+
 * Always up-to-date.
 * YouTube Video Tutorial https://youtu.be/jbyuWkF0RNQ
 * Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
