@@ -1,0 +1,121 @@
+name: 'build scheduled'
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *" # every 12 hours
+
+jobs:
+  get_download_page:
+    runs-on: ubuntu-latest
+    env:
+      MC_DOWNLOAD_PAGE: "https://www.minecraft.net/en-us/download/server/bedrock"
+      CURL_USER_AGENT: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+    steps:
+      - name: get download page
+        id: download_download_page
+        run: curl -L -A "${CURL_USER_AGENT}" -o download.html "${MC_DOWNLOAD_PAGE}"
+
+      - name: temporarily save download.html
+        uses: actions/upload-artifact@v4
+        with:
+          name: download_html
+          path: download.html
+          retention-days: 1
+
+  build_stable_version:
+    runs-on: ubuntu-latest
+    needs: get_download_page
+    permissions: write-all
+    env:
+      GREP_PATTERN: "linux/bedrock-server-"
+      CONTAINER_IMAGE: "ghcr.io/${{ github.repository_owner }}/docker-minecraft-bedrock-server:latest"
+    outputs:
+      server_version: ${{ steps.get_versions.outputs.server_version }}
+      download_url: ${{ steps.get_versions.outputs.download_url }}
+      self_version: ${{ steps.self_version.outputs.self_version }}
+    steps:
+      - name: restore download.html
+        uses: actions/download-artifact@v4
+        with:
+          name: download_html
+
+      - name: latest version
+        id: get_versions
+        run: |
+          echo download_url=$(cat download.html | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
+          echo server_version=$(cat download.html | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
+
+      - name: show output
+        run: |
+          echo ${{ steps.get_versions.outputs.download_url }}
+          echo ${{ steps.get_versions.outputs.server_version }}
+
+      - name: get self version
+        id: self_version
+        if: github.event_name == 'schedule'
+        run: |
+          docker pull ${{ env.CONTAINER_IMAGE }}
+          echo self_version=$(docker inspect ${{ env.CONTAINER_IMAGE }} --format '{{ index .Config.Labels "org.opencontainers.image.version"}}') >> $GITHUB_OUTPUT
+
+      - name: show self version
+        if: github.event_name == 'schedule'
+        run: |
+          echo ${{ steps.self_version.outputs.self_version }}
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        if: github.event_name == 'workflow_dispatch' || steps.get_versions.outputs.server_version != steps.self_version.outputs.self_version
+        with:
+          event-type: build_version
+          client-payload: '{"download_url": "${{ steps.get_versions.outputs.download_url }}", "is_latest": "yes"}'
+
+  build_preview_version:
+    runs-on: ubuntu-latest
+    needs: get_download_page
+    permissions: write-all
+    env:
+      GREP_PATTERN: "linux-preview/bedrock-server-"
+      CONTAINER_IMAGE: "ghcr.io/${{ github.repository_owner }}/docker-minecraft-bedrock-server:preview"
+    outputs:
+      server_version: ${{ steps.get_versions.outputs.server_version }}
+      download_url: ${{ steps.get_versions.outputs.download_url }}
+      self_version: ${{ steps.self_version.outputs.self_version }}
+    steps:
+      - name: restore download.html
+        uses: actions/download-artifact@v4
+        with:
+          name: download_html
+
+      - name: latest version
+        id: get_versions
+        run: |
+          echo download_url=$(cat download.html | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
+          echo server_version=$(cat download.html | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
+
+      - name: show output
+        run: |
+          echo ${{ steps.get_versions.outputs.download_url }}
+          echo ${{ steps.get_versions.outputs.server_version }}
+
+      - name: get self version
+        id: self_version
+        if: github.event_name == 'schedule'
+        run: |
+          docker pull ${{ env.CONTAINER_IMAGE }}
+          echo self_version=$(docker inspect ${{ env.CONTAINER_IMAGE }} --format '{{ index .Config.Labels "org.opencontainers.image.version"}}') >> $GITHUB_OUTPUT
+
+      - name: show self version
+        if: github.event_name == 'schedule'
+        run: |
+          echo ${{ steps.self_version.outputs.self_version }}
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        if: github.event_name == 'workflow_dispatch' || steps.get_versions.outputs.server_version != steps.self_version.outputs.self_version
+        with:
+          event-type: build_version
+          client-payload: '{"download_url": "${{ steps.get_versions.outputs.download_url }}", "is_preview": "yes"}'
