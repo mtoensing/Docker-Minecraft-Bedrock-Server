@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "ignoresPlayerLimit": true,
+    "name": "player_name",
+    "xuid": "1234567890"
+  }
+]
