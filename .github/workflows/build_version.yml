@@ -1,0 +1,85 @@
+name: 'build version'
+
+on:
+  workflow_dispatch:
+    inputs:
+      download_url:
+        description: 'bedrock server download url (zip)'
+        required: true
+        default: 'https://minecraft.azureedge.net/bin-linux/bedrock-server-1.20.73.01.zip'
+
+  # Allows you to trigger this workflow from another workflow
+  repository_dispatch:
+    types: [ build_version ]
+
+jobs:
+  buid_version:
+    name: build version
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - name: checkout the repo
+        uses: actions/checkout@v4
+
+      - name: get version
+        id: get_version
+        run: |
+          SERVER_VERSION=$(echo "${{ inputs.download_url }}${{ github.event.client_payload.download_url }}" | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p')
+          echo download_url="${{ inputs.download_url }}${{ github.event.client_payload.download_url }}" >> $GITHUB_OUTPUT
+          echo server_version="${SERVER_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: show output
+        run: |
+          echo ${{ steps.get_version.outputs.download_url }}
+          echo ${{ steps.get_version.outputs.server_version }}
+
+      - name: Log in to docker.io container registry
+        uses: docker/login-action@v3
+        env:
+          PAT: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        if: ${{ env.PAT != '' }}
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Log in to ghcr.io container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for container image
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          labels: |
+            org.opencontainers.image.authors=Marc Tönsing <marc@marc.tv>
+          tags: |
+            type=raw,value=${{ steps.get_version.outputs.server_version }}
+            type=raw,value=latest,enable=${{ github.event.client_payload.is_latest == 'yes' }}
+            type=raw,value=preview,enable=${{ github.event.client_payload.is_preview == 'yes' }}
+          images: |
+            name=docker.io/marctv/minecraft-bedrock-server,enable=${{ secrets.DOCKER_HUB_ACCESS_TOKEN != '' }}
+            name=ghcr.io/${{ github.repository }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          provenance: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            DOWNLOAD_URL=${{ steps.get_version.outputs.download_url }}
