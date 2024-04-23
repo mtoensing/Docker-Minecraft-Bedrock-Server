@@ -4,7 +4,7 @@ FROM ubuntu:23.10
 ARG DOWNLOAD_URL
 
 # Install necessary packages
-RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y --no-install-recommends unzip ca-certificates curl
+RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y --no-install-recommends unzip ca-certificates curl tzdata
 
 # Set workdir
 WORKDIR /bedrock-server
@@ -30,5 +30,7 @@ EXPOSE 19132/tcp 19132/udp
 
 # Expose minecraft bedrock port IPv6
 EXPOSE 19133/tcp 19133/udp
+
+VOLUME /bedrock-server/worlds
 
 SHELL ["/bin/bash"]
