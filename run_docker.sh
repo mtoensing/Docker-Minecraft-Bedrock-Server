@@ -1,9 +1,12 @@
 docker run \
   --platform linux/amd64 \
   --rm \
+  --kernel-memory 1G \
+  --env TZ=Europe/Berlin \
+  -v /etc/localtime:/etc/localtime:ro \
+  -p 19132:19132/tcp \
+  -p 19132:19132/udp \
   --name mcbedrock \
-  -e MEMORYSIZE='1G' \
-  -p 19132:19132 \
-  -i docker.io/marctv/minecraftbedrockserver:latest
+  -i docker.io/marctv/mcbedrock:dev
 
 docker attach mcbedrock
