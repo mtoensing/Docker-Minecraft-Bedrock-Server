@@ -6,7 +6,7 @@ on:
       download_url:
         description: 'bedrock server download url (zip)'
         required: true
-        default: 'https://minecraft.azureedge.net/bin-linux/bedrock-server-1.20.73.01.zip'
+        default: 'https://minecraft.azureedge.net/bin-linux/bedrock-server-1.XX.XX.XX.zip'
 
   # Allows you to trigger this workflow from another workflow
   repository_dispatch:
