@@ -7,14 +7,13 @@
 ![](https://img.shields.io/docker/pulls/marctv/minecraft-bedrock-server.svg)
 ![](https://img.shields.io/docker/image-size/marctv/minecraft-bedrock-server.svg)
 
-
 * Always up-to-date.
 * YouTube Video Tutorial https://youtu.be/jbyuWkF0RNQ
-* Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/ 
-* GitHub https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server 
+* Tutorial (german) https://marc.tv/anleitung-minecraft-bedrock-server-auf-einem-synology-nas/
+* GitHub https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server
 * Support https://github.com/mtoensing/Docker-Minecraft-Bedrock-Server/issues
 
-# How do I update the container? 
+# How do I update the container?
 
 * Re-download the image from the docker
 * Stop the container
@@ -29,27 +28,27 @@ https://youtu.be/jbyuWkF0RNQ
 ## Volumes
 
 **Worlds**
+
 * **Local folder:** /volume1/docker/bedrockserver/worlds
 * **Mount path:** /bedrock-server/worlds
 
 ## Port Settings
 
-**TCP**
-* **Local Port:** 19132 TCP
-* **Container Port:** 19132 TCP
-
-**UDP**
-* **Local Port:** 19132 UDP
-* **Container Port:** 19132 UDP
+| Port  | Type | Protocol |
+|-------|------|----------|
+| 19132 | IPv4 | TCP      |
+| 19132 | IPv4 | UDP      |
+| 19133 | IPv6 | TCP      |
+| 19133 | IPv6 | UDP      |
 
 Open these ports of the local ip of your NAS to the internet in your router. Consult the manual of your router for this.
 
 ![Correct local and container ports](https://marc.tv/media/2020/01/bedrock-port.jpg "Correct local and container ports")
 
-### Optional: edit server.properties and allowlist.json
+### Persistent Configuration
 
-To edit the `server.properties`, `allowlist.json`, `whitelist.json` or `permissions.json` you have to add them locally on your NAS
-and mount these files in the container.
+To persist the configuration, you have to add them locally on your NAS
+and mount these files and folders in the container.
 
 ![Correct local and container paths](https://marc.tv/media/2019/04/bedrock-server-properties.jpg "Correct local and container paths")
 
@@ -57,31 +56,17 @@ Download these files and place them in the parent folder of your bedrock docker 
 
 * [Example server.properties file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/server.properties)
 * [Example allowlist.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/allowlist.json)
-* [Example whitelist.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/whitelist.json)
 * [Example permissions.json file](https://raw.githubusercontent.com/mtoensing/Docker-Minecraft-Bedrock-Server/master/permissions.json)
 
-**Worlds**
-* **Local folder:** /volume1/docker/bedrockserver/worlds
-* **Mount path:** /bedrock-server/worlds
+| name              | Local path                                      | Container path                    |
+|-------------------|-------------------------------------------------|-----------------------------------|
+| worlds/           | /volume1/docker/bedrockserver/worlds/           | /bedrock-server/worlds/           |
+| server.properties | /volume1/docker/bedrockserver/server.properties | /bedrock-server/server.properties |
+| allowlist.json    | /volume1/docker/bedrockserver/allowlist.json    | /bedrock-server/allowlist.json    |
+| permissions.json  | /volume1/docker/bedrockserver/permissions.json  | /bedrock-server/permissions.json  |
 
-**server.properties**
-* **Local file server.properties:** /volume1/docker/bedrockserver/server.properties
-* **Mount path:** /bedrock-server/server.properties
-
-**allowlist.json**
-* **Local file allowlist.json:** /volume1/docker/bedrockserver/allowlist.json
-* **Mount path:** /bedrock-server/allowlist.json
-
-**whitelist.json**
-* **Local file permissions.json:** /volume1/docker/bedrockserver/whitelist.json
-* **Mount path:** /bedrock-server/whitelist.json
-
-**permissions.json**
-* **Local file permissions.json:** /volume1/docker/bedrockserver/permissions.json
-* **Mount path:** /bedrock-server/permissions.json
-
-You can edit the `server.properties` on you NAS directly after you shut down the server. 
-You can edit specific options like gamemode (creative or survival) or enable the allowlist. 
+You can edit the `server.properties` on you NAS directly after you shut down the server.
+You can edit specific options like gamemode (creative or survival) or enable the allowlist.
 The later is highly recommended if you plan to open the ports to the internet.
 
 ## Add someone to the allowlist and grant user admin rights
