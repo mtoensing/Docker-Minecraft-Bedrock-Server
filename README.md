@@ -1,8 +1,8 @@
-# Minecraft Bedrock Server Docker Image 1.20+
+# Minecraft Bedrock Server Docker Image
 
 ![](https://img.shields.io/github/license/mtoensing/Docker-Minecraft-Bedrock-Server.svg)
 ![](https://img.shields.io/github/stars/mtoensing/Docker-Minecraft-Bedrock-Server)
-![](https://img.shields.io/docker/v/marctv/minecraft-bedrock-server)
+![](https://img.shields.io/docker/v/marctv/minecraft-bedrock-server/latest?label=latest)
 ![](https://img.shields.io/docker/stars/marctv/minecraft-bedrock-server.svg)
 ![](https://img.shields.io/docker/pulls/marctv/minecraft-bedrock-server.svg)
 ![](https://img.shields.io/docker/image-size/marctv/minecraft-bedrock-server.svg)
