@@ -8,7 +8,7 @@
           <list>
             <DockerEnvVarImpl>
               <option name="name" value="DOWNLOAD_URL" />
-              <option name="value" value="https://minecraft.azureedge.net/bin-linux/bedrock-server-1.20.80.05.zip" />
+              <option name="value" value="https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.50.10.zip" />
             </DockerEnvVarImpl>
           </list>
         </option>
@@ -38,15 +38,6 @@
         <option name="commandLineOptions" value="--platform linux/amd64 --kernel-memory 1G" />
         <option name="showCommandPreview" value="true" />
         <option name="sourceFilePath" value="Dockerfile" />
-        <option name="volumeBindings">
-          <list>
-            <DockerVolumeBindingImpl>
-              <option name="containerPath" value=" /etc/localtime" />
-              <option name="hostPath" value=" /etc/localtime" />
-              <option name="readOnly" value="true" />
-            </DockerVolumeBindingImpl>
-          </list>
-        </option>
       </settings>
     </deployment>
     <method v="2" />
