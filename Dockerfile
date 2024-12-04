@@ -1,5 +1,5 @@
-# Use Ubuntu as base image
-FROM ubuntu:23.10
+# Use Ubuntu 24.04 LTS as base image
+FROM docker.io/library/ubuntu:24.04
 
 ARG DOWNLOAD_URL
 
