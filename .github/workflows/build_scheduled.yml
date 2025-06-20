@@ -27,7 +27,6 @@ jobs:
     needs: get_links_json
     permissions: write-all
     env:
-      GREP_PATTERN: "linux/bedrock-server-"
       CONTAINER_IMAGE: "ghcr.io/${{ github.repository_owner }}/docker-minecraft-bedrock-server:latest"
     outputs:
       server_version: ${{ steps.get_versions.outputs.server_version }}
@@ -42,8 +41,8 @@ jobs:
       - name: latest version
         id: get_versions
         run: |
-          echo download_url=$(cat links.json | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
-          echo server_version=$(cat links.json | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
+          echo download_url=$(jq -r '.result.links[] | select(.downloadType == "serverBedrockLinux") | .downloadUrl' links.json) >> $GITHUB_OUTPUT
+          echo server_version=$(jq -r '.result.links[] | select(.downloadType == "serverBedrockLinux") | .downloadUrl' links.json | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
 
       - name: show output
         run: |
@@ -74,7 +73,6 @@ jobs:
     needs: get_links_json
     permissions: write-all
     env:
-      GREP_PATTERN: "linux-preview/bedrock-server-"
       CONTAINER_IMAGE: "ghcr.io/${{ github.repository_owner }}/docker-minecraft-bedrock-server:preview"
     outputs:
       server_version: ${{ steps.get_versions.outputs.server_version }}
@@ -89,8 +87,8 @@ jobs:
       - name: latest version
         id: get_versions
         run: |
-          echo download_url=$(cat links.json | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
-          echo server_version=$(cat links.json | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
+          echo download_url=$(jq -r '.result.links[] | select(.downloadType == "serverBedrockPreviewLinux") | .downloadUrl' links.json) >> $GITHUB_OUTPUT
+          echo server_version=$(jq -r '.result.links[] | select(.downloadType == "serverBedrockPreviewLinux") | .downloadUrl' links.json | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
 
       - name: show output
         run: |
