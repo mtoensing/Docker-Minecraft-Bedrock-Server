@@ -6,26 +6,25 @@ on:
     - cron: "0 */12 * * *" # every 12 hours
 
 jobs:
-  get_download_page:
+  get_links_json:
     runs-on: ubuntu-latest
     env:
-      MC_DOWNLOAD_PAGE: "https://www.minecraft.net/en-us/download/server/bedrock"
-      CURL_USER_AGENT: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+      MC_DOWNLOAD_LINKS_API: "https://net-secondary.web.minecraft-services.net/api/v1.0/download/links"
     steps:
-      - name: get download page
-        id: download_download_page
-        run: curl -L -A "${CURL_USER_AGENT}" -o download.html "${MC_DOWNLOAD_PAGE}"
+      - name: get download links
+        id: download_links_json
+        run: curl -L -o links.json "${MC_DOWNLOAD_LINKS_API}"
 
-      - name: temporarily save download.html
+      - name: temporarily save links.json
         uses: actions/upload-artifact@v4
         with:
-          name: download_html
-          path: download.html
+          name: links_json
+          path: links.json
           retention-days: 1
 
   build_stable_version:
     runs-on: ubuntu-latest
-    needs: get_download_page
+    needs: get_links_json
     permissions: write-all
     env:
       GREP_PATTERN: "linux/bedrock-server-"
@@ -35,16 +34,16 @@ jobs:
       download_url: ${{ steps.get_versions.outputs.download_url }}
       self_version: ${{ steps.self_version.outputs.self_version }}
     steps:
-      - name: restore download.html
+      - name: restore links.json
         uses: actions/download-artifact@v4
         with:
-          name: download_html
+          name: links_json
 
       - name: latest version
         id: get_versions
         run: |
-          echo download_url=$(cat download.html | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
-          echo server_version=$(cat download.html | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
+          echo download_url=$(cat links.json | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
+          echo server_version=$(cat links.json | grep "${{ env.GREP_PATTERN }}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
 
       - name: show output
         run: |
@@ -72,7 +71,7 @@ jobs:
 
   build_preview_version:
     runs-on: ubuntu-latest
-    needs: get_download_page
+    needs: get_links_json
     permissions: write-all
     env:
       GREP_PATTERN: "linux-preview/bedrock-server-"
@@ -82,16 +81,16 @@ jobs:
       download_url: ${{ steps.get_versions.outputs.download_url }}
       self_version: ${{ steps.self_version.outputs.self_version }}
     steps:
-      - name: restore download.html
+      - name: restore links.json
         uses: actions/download-artifact@v4
         with:
-          name: download_html
+          name: links_json
 
       - name: latest version
         id: get_versions
         run: |
-          echo download_url=$(cat download.html | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
-          echo server_version=$(cat download.html | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
+          echo download_url=$(cat links.json | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+') >> $GITHUB_OUTPUT
+          echo server_version=$(cat links.json | grep "${GREP_PATTERN}" | egrep -o 'https?://[^" ]+' | xargs basename -s ".zip" | sed -En 's#bedrock-server-([0-9.]+)#\1#p') >> $GITHUB_OUTPUT
 
       - name: show output
         run: |
