@@ -3,7 +3,7 @@ name: 'build scheduled'
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *" # every 12 hours
+    - cron: "17 */12 * * *" # every 12 hours, away from top-of-hour load
 
 jobs:
   get_links_json:
