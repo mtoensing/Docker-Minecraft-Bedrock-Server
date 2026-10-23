@@ -23,7 +23,11 @@ RUN unzip bedrock-server-ubuntu.zip && \
 # Set env path
 ENV LD_LIBRARY_PATH=.
 
-CMD ./bedrock_server
+# Bedrock ignores SIGTERM and only stops cleanly via the "stop" command.
+# The entrypoint translates SIGTERM/SIGINT into "stop" so `docker stop` saves the world.
+COPY --chmod=755 entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Expose minecraft bedrock port IPv4
 EXPOSE 19132/tcp 19132/udp
